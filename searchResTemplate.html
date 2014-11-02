@@ -1,0 +1,44 @@
+<html>
+  <head>
+    <title>Search Results</title>
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css">
+  </head>
+  <body>
+    <div class="container">
+      <div class="jumbotron">
+        <h2><%= recipes.length %>&nbsp Results. That's cool !</h2>
+        <p>Now you can click on any image and write a review for it</p>
+      </div>
+    </div>
+    <div class="container">
+      <% var count = 0 %>
+      <% for (var i = 0; i < recipes.length/3; i++) {%>
+      <div class="container">
+      <div class="row">
+        <div class="col-xs-4 col-md-4">
+          <form method="POST" action="/seeRecipe">
+            <input type="image" style="width: 320px; height: 314px" src="<%= recipes[count].image_url %>" name="submitImage" />
+            <input type="hidden" name="recipeId" value="<%= recipes[count].recipe_id %>" />
+          </form>
+        </div>
+        
+        <div class="col-xs-4 col-md-4">
+          <form method="POST" action="/seeRecipe">
+            <input type="image" style="width: 320px; height: 314px" src="<%= recipes[count+1].image_url %>" name="submitImage" />
+            <input type="hidden" name="recipeId" value="<%= recipes[count+1].recipe_id %>" />
+          </form>
+        </div>
+        
+        <div class="col-xs-4 col-md-4">
+          <form method="POST" action="/seeRecipe">
+            <input type="image" style="width: 320px; height: 314px" src="<%= recipes[count+2].image_url %>" name="submitImage" />
+            <input type="hidden" name="recipeId" value="<%= recipes[count+2].recipe_id %>" />
+          </form>
+        </div>
+      </div> 
+     <% count = count + 1 %>
+     <% } %>
+   </div>
+    </div>
+  </body>
+</html>

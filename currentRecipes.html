@@ -1,0 +1,29 @@
+<html>
+  <head>
+   <title>Current recipes</title>
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css">
+  </head>
+  <body>
+    <div class="container">
+      <div class="jumbotron">
+        <h1>My Reviews</h1>
+        <h2>This is your reviews page</h2>
+      </div>
+    </div>
+    <% for (var i = 0; i < recipes.length; i++) {%>
+      <div class="container">
+        <div class="row">
+            <h2><%= recipes[i].title %></h2>
+            <br>
+          <img style="width: 500px; height: 500px"  src="<%= recipes[i].imageUrl %>">
+          <br>
+          <div class="jumbotron">
+            <h2><%= recipes[i].review %></h2>
+          </div>
+        </div>
+      </div>
+    <% } %>
+  </body>
+</html>
+
+  

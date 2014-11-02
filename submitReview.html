@@ -1,0 +1,46 @@
+<html>
+  <head>
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css">
+    <title>A recipe review page</title>
+  </head>
+  <div class="container">
+    <form action="/submitReview" method="POST">
+      <div class="jumbotron">
+        <p style="text-align: center"><h2><%= title %></h2></p>
+        <input type="hidden" name="title" value="<%= title %>">
+      </div>
+      <div class="row">
+        <div class="col-md-4  col-md-offset-2">
+          <h2>Published by
+            <%= publisher %>
+          </h2>
+          <input type="hidden" name="publisher" value="<%= publisher %>">
+          <a style="text-decoration: none" href="<%= publisherUrl %>">Visit cookbook for this recipe</a>
+          <input type="hidden" name="publisherUrl" value="<%= publisherUrl %>">
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-4 col-md-offset-2">
+          <img width="300" height="300" src="<%= imageUrl %>">
+          <input type="hidden" name="imageUrl" value="<%= imageUrl %>">
+        </div>
+        <div class="col-md-4">
+          <ul>
+            <% for (var i = 0; i < ingredients.length; i++) { %>
+              <li><%- ingredients[i] %></li>
+            <% } %>
+          </ul>
+          <input type="hidden" name="ingredients" value="<%= ingredients %>">
+        </div>
+      </div>
+      <div class="row">
+        <br>
+        <div class="col-md-6 col-md-offset-2">
+          <textarea class="form-control" name="review" value="review" placeholder="Leave us a review"></textarea>
+         <br><input type="submit" class="btn btn-primary" name="Submit" value="Save Review">
+        </div>
+      </div>
+    </form>
+  </div>
+  </body>
+</html>

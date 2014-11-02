@@ -1,0 +1,20 @@
+{
+  "name"    : "getRecipes", 
+  "version" : "0.0.1",
+  "scripts" : {
+    "start": "grunt"
+  },
+  "dependencies" : {
+    "express"         : "3.x.x",
+    "lodash"          : "*",
+    "mongoose"        : "*",
+    "querystring"     : "*",
+    "unirest"         : "*"
+  }, 
+  "devDependencies": {
+    "grunt": "~0.4.5",
+    "grunt-contrib-watch": "~0.6.1",
+    "grunt-contrib-uglify": "~0.4.0",
+    "grunt-nodemon"       : "~0.3.0"
+  }
+}
