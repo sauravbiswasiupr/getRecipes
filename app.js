@@ -45,7 +45,6 @@ app.get("/currentRecipes", function(req, res) {
    if (data.length === 0)
      res.send("No reviews to show");
    else {
-     console.log(data[0]);
      var html = generateRecipeHTML(data);
      res.send(html);
    }
@@ -81,7 +80,6 @@ app.post("/seeRecipe", function(req, res) {
 
 app.post("/submitReview", function(req, res) {
   var newRecipe = new recipe;
-  console.log(req.body);
   newRecipe.title        = req.body.title;
   newRecipe.publisher    = req.body.publisher; 
   newRecipe.publisherUrl = req.body.publisherUrl;
@@ -93,7 +91,6 @@ app.post("/submitReview", function(req, res) {
     if (err)
       console.log("Error while saving to db: ", db);
     else {
-      console.log("Saved");
       res.sendfile("reviewSubmit.html");
     }
   });
