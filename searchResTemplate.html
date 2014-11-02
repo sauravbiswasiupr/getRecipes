@@ -12,7 +12,7 @@
     </div>
     <div class="container">
       <% var count = 0 %>
-      <% for (var i = 0; i < recipes.length/3; i++) {%>
+      <% for (var i = 0; i < parseInt(recipes.length/3); i++) {%>
       <div class="container">
       <div class="row">
         <div class="col-xs-4 col-md-4">
@@ -36,7 +36,7 @@
           </form>
         </div>
       </div> 
-     <% count = count + 1 %>
+     <% count += 3 %>
      <% } %>
    </div>
     </div>
